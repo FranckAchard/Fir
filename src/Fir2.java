@@ -1,18 +1,19 @@
 import java.util.Scanner;
 
-public class Fir {
+public class Fir2 {
     private static Scanner input = new Scanner(System.in);
     
     public static void main(String[] args) {
         int height;
-        String fir= "";
         
         System.out.println("Input height :");
         height= input.nextInt();
         if (height < 5 || height > 25) {
             System.out.println("Height must be between 5 and 25, try again!");
         } else {
-            fir= makeFir(height);
+            String[] fir= new String[height+1];
+            fir= makeFir2(height);
+            
         }
              
     }
@@ -25,23 +26,23 @@ public class Fir {
         return rLength;
     }
     
-    private static String makeFir(int pHeight) {
+    private static String[] makeFir2(int pHeight) {
         int ct;
-        String rFir= null;
+        String[] rFir= new String[pHeight+1];
         
         
         for (ct = 1 ; ct <= pHeight ; ct += 1) {
-            makeLine(length(pHeight), ct);
+            makeLine2(length(pHeight), ct);
         }
         
         for (ct = 1 ; ct <= pHeight/2 ; ct += 1) {
-            makeLine(length(pHeight), 2);
+            makeLine2(length(pHeight), 2);
         }
         
         return rFir;
     }
     
-    private static void makeLine(int pLength, int pNbLine) {
+    private static void makeLine2(int pLength, int pNbLine) {
         int ct, nbSpace, nbStar;
         String outputString, stringSpace, stringStar;
         
